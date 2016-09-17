@@ -6,6 +6,9 @@
   font-style: normal;
 }
 
+
+
+
 body {
   font-family: "Work Sans", Arial, sans-serif;
   font-weight: 300;
@@ -1160,6 +1163,44 @@ a.reset_time {
 	float: left;
 	margin-top: 5px;
 	color: #000;
+}
+
+@media only screen and (max-width : 768px) {
+    body{
+        width: 100%;
+    }
+
+    .insection{
+        margin-left: 0;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+    }
+
+    #main-logo{
+        margin: 20px auto;
+        display: block;
+    }
+
+    .tagline{
+        text-align: center;
+    }
+
+    .subtitle{
+        width: 100%;
+        display: block;
+        text-align: center;
+        position: relative;
+        top: auto !important;
+        left: auto;
+        margin-bottom: 30px;
+    }
+
 }
 
 

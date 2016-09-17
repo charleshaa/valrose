@@ -3,7 +3,7 @@
 
     'use strict';
 
-
+    var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
     var size = function(ratio) {
         var h = $(window).height() * ratio;
         var w = $(window).width() * ratio;
@@ -31,12 +31,14 @@
     };
 
     var parallax = function() {
-        $(window).stellar({
-            horizontalScrolling: false,
-            hideDistantElements: false,
-            responsive: true
+        if(!isSafari){
+            $(window).stellar({
+                horizontalScrolling: false,
+                hideDistantElements: false,
+                responsive: true
 
-        });
+            });
+        }
     };
 
     function elementInViewport(el) {
