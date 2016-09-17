@@ -1176,10 +1176,11 @@ a.reset_time {
         left: auto;
         width: 100%;
         height: auto;
+        margin-top: 50%;
         padding: 10px;
-        -webkit-transform: none;
-        -ms-transform: none;
-        transform: none;
+        -webkit-transform: translate3d(0, -25%, 0);
+        -ms-transform: translate3d(0, -25%, 0);
+        transform: translate3d(0, -25%, 0);
     }
 
     #main-logo{
@@ -1201,6 +1202,85 @@ a.reset_time {
         margin-bottom: 30px;
     }
 
+    #lang-switcher{
+        top: -60px;
+        left: 50%;
+        margin-left: -90px;
+    }
+
+    h3.main-title{
+        padding-left: 0;
+        text-align: center;
+        line-height: 50px;
+        margin-top: 30px;
+    }
+    .svg-frame-cnt {
+        width: 375px;
+        height: 315px;
+        position: relative;
+        top: auto;
+        left: auto;
+        background: transparent;
+        margin: 0 auto 50px auto;
+    }
+    .paragraph{
+        top: auto !important;
+        left: auto !important;
+        padding: 50px 30px 30px 30px;
+        text-align: center;
+        width: 100%;
+    }
+    /*.paragraph.visible-xs{
+        top: auto !important;
+        left: auto !important;
+        padding: 40px;
+    }*/
+
+    #first .paragraph{
+        top: 390px;
+        left: 140px;
+        text-align: center;
+    }
+
+    #second .paragraph{
+        top: 210px;
+        left: 120px;
+    }
+    #third .paragraph{
+        top: 220px;
+        left: 120px;
+        /*font-size: 19px;*/
+    }
+    #fourth .paragraph{
+        top: 210px;
+        left: 140px;
+        padding-right: 20px;
+    }
+    #fifth .paragraph{
+        top: 190px;
+        left: 140px;
+        padding-right: 20px;
+    }
+
+
+    .svg-frame{
+        /*-webkit-transform: scale(.7);
+        -ms-transform: scale(.7);
+        -o-transform: scale(.7);
+        transform: scale(.7);*/
+    }
+    .insection.white{
+        width: 100%;
+        padding: 40px 40px 50px 40px;
+        margin-left: 0;
+    }
+    .booking-tabs{
+        width: auto;
+    }
+
+    #sixth{
+        height: auto;
+    }
 }
 
 

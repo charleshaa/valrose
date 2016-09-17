@@ -72,7 +72,7 @@
     			<div class="overlay"></div>
     			<div class="insection with-bg">
     				<h3 class="main-title"><?php echo $item['Title_'.$lang]; ?></h3>
-    				<p class="paragraph"><?php echo $item['Sentence_'.$lang]; ?></p>
+    				<p class="paragraph hidden-xs"><?php echo $item['Sentence_'.$lang]; ?></p>
     				<div class="svg-frame-cnt">
     					<svg class="svg-frame" width="375" height="315">
     						<line class="top" x1="0" y1="0" x2="375" y2="0"/>
@@ -82,6 +82,7 @@
     						<line class="right right-top" x1="375" y1="0" x2="375" y2="60"/>
     						<line class="right right-bottom" x1="375" y1="275" x2="375" y2="315"/>
     					</svg>
+                        <p class="paragraph visible-xs"><?php echo $item['Sentence_'.$lang]; ?></p>
     				</div>
     			</div>
     		</div>
