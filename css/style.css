@@ -278,7 +278,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #sixth{
-    height: 1400px;
+
 }
 
 .insection.white{
@@ -291,6 +291,8 @@ h1, h2, h3, h4, h5, h6 {
     color: #333;
     width: 640px;
     height: auto;
+top: 100px;
+transform: none;
     margin-left: -320px;
     letter-spacing: 1px;
 }

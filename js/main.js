@@ -31,7 +31,7 @@
     };
 
     var parallax = function() {
-        if(!isSafari){
+        if (!isSafari) {
             $(window).stellar({
                 horizontalScrolling: false,
                 hideDistantElements: false,
@@ -81,7 +81,7 @@
         );
     }
 
-    function goSmooth(element, speed){
+    function goSmooth(element, speed) {
         $('html, body').animate({
             scrollTop: $(element).offset().top
         }, speed);
@@ -91,7 +91,7 @@
     $(function() {
         parallax();
         resize(size(1), '.fullsize');
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             resize(size(1), '.fullsize');
         });
         // setTimeout(function () {
@@ -106,7 +106,7 @@
             });
         });
 
-        $('.scroll-to').on('click', function () {
+        $('.scroll-to').on('click', function() {
             goSmooth($(this).attr('href'), 2000);
             return false;
         });
@@ -135,39 +135,49 @@
             checkout.hide();
         }).data('datepicker');
 
-		$('#date').datepicker({
+        $('#date').datepicker({
             onRender: function(date) {
                 return date.valueOf() < now.valueOf() ? 'disabled' : '';
             }
         });
 
-		$('#hour').timepicki({
-			step_size_minutes:15,
-			disable_keyboard_mobile: true
-		});
+        $('#hour').timepicki({
+            step_size_minutes: 15,
+            disable_keyboard_mobile: true,
+            start_time: ["08", "00", "PM"]
+        });
 
 
-        $('.valform').submit(function(e){
+        $('ul.booking-tabs').on('shown.bs.tab', 'a', function(e) {
+            var type = $(e.target).data('type');
+            $('#restaurant-type').val(type);
+        });
+
+        $('.valform').submit(function(e) {
             e.preventDefault();
             console.log($(this).serializeArray());
             var paramObj = {};
             $.each($(this).serializeArray(), function(_, kv) {
-              if (paramObj.hasOwnProperty(kv.name)) {
-                paramObj[kv.name] = $.makeArray(paramObj[kv.name]);
-                paramObj[kv.name].push(kv.value);
-              }
-              else {
-                paramObj[kv.name] = kv.value;
-              }
+                if (paramObj.hasOwnProperty(kv.name)) {
+                    paramObj[kv.name] = $.makeArray(paramObj[kv.name]);
+                    paramObj[kv.name].push(kv.value);
+                } else {
+                    paramObj[kv.name] = kv.value;
+                }
             });
-            $.post('book.php', paramObj, function (data) {
+            $.post('book.php', paramObj, function(data) {
                 console.log(data);
             });
             return false;
         });
 
+        $(document).ajaxSuccess(function (e, xhr, opts, data) {
+            console.log(data);
+            console.log("Form submitted");
+        });
 
-	});
+
+    });
 
 
 }());
