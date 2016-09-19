@@ -111,7 +111,7 @@
             return false;
         });
 
-        var nowTemp = new Date();
+        var nowTemp = new Date(1480546800000);
         var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
 
         var checkin = $('#arrival').datepicker({

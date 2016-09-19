@@ -3,7 +3,8 @@
     setTimeout(function(){
 
         if (!window.FormData) return;
-
+        var successModal = $('#success-modal').appendTo('body').modal({show: false});
+        var errorModal = $('#error-modal').appendTo('body').modal({show: false});
         var form        = document.getElementById("<?php echo  $options['id'] ; ?>"),
             msgsuccess  = form.getElementsByClassName("form-message-success").item(0),
             msgfail     = form.getElementsByClassName("form-message-fail").item(0),
@@ -11,21 +12,16 @@
                 for(var i=0, max=form.elements.length;i<max;i++) form.elements[i].disabled = status;
             },
             success     = function(){
-                if (msgsuccess) {
-                    msgsuccess.style.display = 'block';
-                } else {
-                    alert("<?php echo $app("i18n")->get('Form submission was successfull.'); ?>");
-                }
-
+                successModal.modal('show');
                 disableForm(false);
             },
             fail        = function(){
-                if (msgfail) {
-                    msgfail.style.display = 'block';
-                } else {
-                    alert("<?php echo $app("i18n")->get('Form submission failed.'); ?>");
-                }
-
+                // if (msgfail) {
+                //     msgfail.style.display = 'block';
+                // } else {
+                //     alert("<?php echo $app("i18n")->get('Form submission failed.'); ?>");
+                // }
+                errorModal.modal('show');
                 disableForm(false);
             };
 

@@ -90,6 +90,29 @@
 		<?php region('Booking form', $lang) ?>
 	</div>
 
+    <div class="modal fade" id="success-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <p class="text-success">
+                La demande a été envoyée avec succès.
+            </p>
+
+            <p>
+                Nous vous remercions pour votre confiance, et vous invitons à consulter votre boite email.
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="error-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <p class="text-danger">
+                Un problème est survenu lors de la soumission. Merci de réessayer.
+            </p>
+        </div>
+      </div>
+    </div>
+
 
 	<?php region('Footer', $lang); ?>
 
