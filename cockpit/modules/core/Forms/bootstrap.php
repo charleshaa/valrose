@@ -63,9 +63,22 @@ $app->bind("/api/forms/submit/:form", function($params) use($app) {
                     $body = implode("\n<br>", $body);
                 }
 
+
+                // Take care of sender
+                $customer = $formdata['email'];
+                $c_template = null;
+                if($formdata['type'] == 'hotel'){
+                    $c_template = $this->path("custom:forms/emails/will_confirm_hotel_".$formdata['lang'].".php");
+                } else {
+                    $c_template = $this->path("custom:forms/emails/will_confirm_restaurant_".$formdata['lang'].".php");
+                }
+
+                $c_body = $this->renderer->file($c_template, $formdata, false);
+
                 $options = $this->param("form_options", []);
 
                 $this->mailer->mail($frm["email"], $this->param("__mailsubject", "New form data for: ".$form), $body, $options);
+                $this->mailer->mail($formdata["email"], "Le Valrose | Confirmation", $body, $options);
             }
         }
 
