@@ -4,6 +4,7 @@
     'use strict';
 
     var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+    var isIphone = !!navigator.userAgent.match(/iPhone/i);
     var size = function(ratio) {
         var h = $(window).height() * ratio;
         var w = $(window).width() * ratio;
@@ -31,13 +32,20 @@
     };
 
     var parallax = function() {
-        if (!isSafari) {
+        if (!isSafari || isIphone) {
             $(window).stellar({
                 horizontalScrolling: false,
                 hideDistantElements: false,
                 responsive: true
-
             });
+        }
+    };
+
+    var resizeSvg = function () {
+        var factor;
+        var width = $(window).width();
+        if(width < 375){
+            factor = width/375;
         }
     };
 

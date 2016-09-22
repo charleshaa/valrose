@@ -17,7 +17,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Valrose</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=375, user-scalable=no">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="author" content="Charles Haarman" />
