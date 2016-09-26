@@ -461,6 +461,10 @@ stroke-dashoffset: 750;
     background-color: rgba(70, 70, 70, .45);
 }
 
+#first .with-bg{
+    background-color: rgba(70, 70, 70, .25);
+}
+
 h3.main-title{
     text-transform: uppercase;
     color: #fff;

@@ -76,9 +76,9 @@ $app->bind("/api/forms/submit/:form", function($params) use($app) {
                 $c_body = $this->renderer->file($c_template, $formdata, false);
 
                 $options = $this->param("form_options", []);
-
+                
                 $this->mailer->mail($frm["email"], $this->param("__mailsubject", "New form data for: ".$form), $body, $options);
-                $this->mailer->mail($formdata["email"], "Le Valrose | Confirmation", $body, $options);
+                $this->mailer->mail($formdata["email"], "Le Valrose | Confirmation", $c_body, $options);
             }
         }
 

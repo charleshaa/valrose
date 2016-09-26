@@ -32,7 +32,7 @@
     };
 
     var parallax = function() {
-        if (!isSafari || isIphone) {
+        if (!isSafari) {
             $(window).stellar({
                 horizontalScrolling: false,
                 hideDistantElements: false,
@@ -41,13 +41,6 @@
         }
     };
 
-    var resizeSvg = function () {
-        var factor;
-        var width = $(window).width();
-        if(width < 375){
-            factor = width/375;
-        }
-    };
 
     function elementInViewport(el) {
         var top = el.offsetTop;
